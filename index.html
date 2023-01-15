@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Дмитрий Алексеев. Fronend-разработчик и веб-верстальщик</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+		rel="stylesheet">
+
+	<style>
+		* {
+			font-family: 'Roboto', sans-serif;
+		}
+
+		html,
+		body,
+		h1,
+		h2,
+		p {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-color: #F6F7F9;
+			font-size: 20px;
+		}
+
+		h1 {
+			font-size: 80px;
+			margin-bottom: 25px;
+			padding-top: 230px;
+		}
+
+		h2 {
+			font-size: 56px;
+			margin-bottom: 75px;
+		}
+
+		header {
+			height: 170px;
+			font-size: 28px;
+			padding: 0 10px;
+		}
+
+		section {
+			padding: 0 10px;
+			margin-bottom: 150px;
+		}
+
+		section,
+		footer {
+			height: fit-content;
+		}
+
+		.fixed-container {
+			max-width: 1520px;
+			height: 100%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		button {
+			padding: 20px 60px;
+			font-size: 18px;
+			line-height: 1;
+			cursor: pointer;
+			border-radius: 10px;
+		}
+
+		.light-btn {
+			border: 1px solid black;
+			background-color: transparent;
+		}
+
+		.dark-btn {
+			color: white;
+			border: 1px solid #3F2AFF;
+			background-color: #3F2AFF;
+			margin-bottom: 215px;
+		}
+
+		header>div {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.nav {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		header .nav {
+			min-width: 440px;
+		}
+
+		footer .nav {
+			flex-direction: column;
+		}
+
+		.nav a {
+			text-decoration: none;
+			color: black;
+		}
+
+		.nav a:hover {
+			text-decoration: underline;
+		}
+
+		header span {
+			margin-right: 35px;
+			font-size: 25px;
+		}
+
+		.first-block>div {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			background-image: url('img/man.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: right center;
+		}
+
+		.first-block p {
+			font-size: 26px;
+			margin-bottom: 55px;
+		}
+
+		.services {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 85px;
+		}
+
+		.services>div {
+			width: 260px;
+		}
+
+		.services img {
+			width: 175px;
+			margin-bottom: 55px;
+			margin-right: auto;
+		}
+
+		.price-info {
+			color: #fff;
+			background-color: #3F2AFF;
+			margin-bottom: 0;
+			padding-top: 80px;
+			padding-bottom: 145px;
+		}
+
+		.price-info h2 {
+			line-height: 143%;
+			margin-bottom: 100px;
+		}
+
+		.title-works {
+			padding-top: 100px;
+			margin-bottom: 70px;
+		}
+
+		.works {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 75px;
+		}
+
+		.works img {
+			/* width: 465px; */
+			width: 26vw;
+			margin-bottom: 20px;
+		}
+
+		.price-info h2,
+		.price-info p {
+			width: 50%;
+		}
+
+		footer {
+			padding-top: 100px;
+			padding-left: 10px;
+			padding-right: 10px;
+			font-size: 26px;
+		}
+
+		footer>div {
+			display: flex;
+			justify-content: space-between;
+			/* align-items: center; */
+			margin-bottom: 145px;
+		}
+
+		footer .nav a,
+		footer p {
+			margin-bottom: 25px;
+		}
+
+		.social-block {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+		}
+
+		.social-block button {
+			margin-bottom: 50px;
+		}
+
+		footer .fixed-container .social-links {
+			min-width: 280px;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.icon {
+			display: block;
+			height: 23px;
+			width: 28px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center center;
+		}
+
+		.icon-fb {
+			width: 15px;
+			background-image: url('img/fb.png');
+		}
+
+		.icon-vk {
+			background-image: url('img/vk.png');
+		}
+
+		.icon-yt {
+			background-image: url('img/you.png');
+		}
+
+		.icon-tg {
+			background-image: url('img/telegram.png');
+		}
+
+		.icon-inst {
+			background-image: url('img/inst.png');
+		}
+
+		.popup-container {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			display: none;
+			justify-content: center;
+			align-items: center;
+			background-color: #000000b3;
+		}
+
+		.popup {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			background-color: #fff;
+			width: 300px;
+			height: 300px;
+			padding: 20px 40px;
+			border-radius: 8px;
+		}
+
+		input {
+			padding: 5px 3px;
+			font-size: 18px;
+		}
+
+		@media (max-width: 1399px) {
+			.fixed-container {
+				max-width: 1200px;
+			}
+		}
+
+		@media (max-width: 1199px) {
+			.fixed-container {
+				max-width: 1000px;
+			}
+		}
+	</style>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const container = document.querySelector('.popup-container');
+			const popupBtns = document.querySelectorAll('.open-popup');
+			const btnSend = document.querySelector('.send');
+
+			for (let i = 0; i < popupBtns.length; i++) {
+				popupBtns[i].addEventListener('click', function () {
+					container.style.display = 'flex';
+				});
+			}
+
+			container.addEventListener('click', function (event) {
+				if (event.target == container) {
+					container.style.display = 'none';
+				}
+			});
+
+			btnSend.addEventListener('click', function () {
+				container.style.display = 'none';
+			});
+
+		});
+	</script>
+</head>
+
+<body>
+
+	<div class="popup-container">
+		<form action="#" class="popup">
+			<input type="text" placeholder="Введите ваше имя">
+			<input type="text" placeholder="Введите ваш Email">
+			<button class="light-btn send">Отправить</button>
+		</form>
+	</div>
+
+	<header>
+		<div class="fixed-container">
+			<div class="nav">
+				<a href="#">Услуги</a>
+				<a href="#">Портфолио</a>
+				<a href="#">Стоимость</a>
+			</div>
+
+			<div>
+				<span>+7 (499) 995-55-77</span>
+				<button class="light-btn open-popup">Заказать звонок</button>
+			</div>
+		</div>
+	</header>
+
+	<section class="first-block">
+		<div class="fixed-container">
+			<h1>Дмитрий Алексеев</h1>
+			<p>Fronend-разработчик и веб-верстальщик</p>
+			<button class="dark-btn open-popup">Узнать больше</button>
+		</div>
+
+	</section>
+
+	<section>
+		<div class="fixed-container">
+			<h2>Что я делаю</h2>
+			<div class="services">
+				<div>
+					<img src="img/1.png" alt="">
+					<p>Вёрстка лендинг-страниц<br>и сайтов любой сложности</p>
+
+				</div>
+				<div>
+					<img src="img/2.png" alt="">
+					<p>Адаптивная вёрстка под все браузеры и устройства</p>
+				</div>
+				<div>
+					<img src="img/3.png" alt="">
+					<p>Frontend-разработка<br>и программирование</p>
+				</div>
+				<div>
+					<img src="img/4.png" alt="">
+					<p>Исправление и доработка существующей вёрстки</p>
+
+				</div>
+			</div>
+			<button class="light-btn open-popup">Узнать стоимость</button>
+		</div>
+	</section>
+
+	<section>
+		<div class="fixed-container">
+			<h2 class="title-works">Примеры работ</h2>
+
+			<div class="works">
+				<div>
+					<img src="img/e1.png" alt="">
+					<p>Сайт психолога Веры Антоновой</p>
+				</div>
+
+				<div>
+					<img src="img/e2.png" alt="">
+					<p>Сайт магазина детской одежды</p>
+				</div>
+
+				<div>
+					<img src="img/e3.png" alt="">
+					<p>Сайт магазина "Рыболов"</p>
+				</div>
+			</div>
+
+			<button class="light-btn open-popup">Заказать проект</button>
+		</div>
+	</section>
+
+	<section class="price-info">
+		<div class="fixed-container">
+			<h2>Адаптивная вёрстка под все устройства и браузеры<br>от 1000 &#8381; всего за 4 часа.&#42;</h2>
+			<p>
+				&#42; Срок и стоимость могут отличаться от заявленных и рассчитываются индивидуально, в зависимости от сложности
+				задач.
+			</p>
+		</div>
+	</section>
+
+	<footer>
+		<div class="fixed-container">
+			<div class="nav">
+				<a href="#">Услуги</a>
+				<a href="#">Портфолио</a>
+				<a href="#">Стоимость</a>
+			</div>
+
+			<div>
+				<p>dmitry@alekseev.com</p>
+				<span>+7 (499) 995-55-77</span>
+			</div>
+
+			<div class="social-block">
+				<button class="light-btn open-popup">Заказать звонок</button>
+				<div class="social-links">
+					<a href="#" class="icon icon-fb"></a>
+					<a href="#" class="icon icon-vk"></a>
+					<a href="#" class="icon icon-yt"></a>
+					<a href="#" class="icon icon-tg"></a>
+					<a href="#" class="icon icon-inst"></a>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+
+</body>
+
+</html>
